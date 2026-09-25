@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard | FaceAttend AI</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="dashboard-navbar">
+      <div class="logo">FaceAttend <span>AI</span></div>
+
+      <button id="logoutButton" class="logout-button">Logout</button>
+    </header>
+
+    <!-- Dashboard -->
+    <main class="dashboard">
+      <div class="dashboard-header">
+        <div>
+          <p class="dashboard-label">ADMIN DASHBOARD</p>
+
+          <h1>Welcome Back 👋</h1>
+
+          <p>Manage your employees and attendance from one place.</p>
+        </div>
+      </div>
+
+      <!-- Statistics -->
+      <section class="stats">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+
+          <div>
+            <p>Total Employees</p>
+            <h2 id="totalEmployees">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+
+          <div>
+            <p>Present Today</p>
+            <h2 id="presentToday">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">❌</div>
+
+          <div>
+            <p>Absent Today</p>
+            <h2 id="absentToday">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+
+          <div>
+            <p>Attendance Rate</p>
+            <h2 id="attendanceRate">0%</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Actions -->
+      <section class="dashboard-section">
+        <h2>Quick Actions</h2>
+
+        <div class="action-container">
+          <a href="/employee" class="action-card">
+            <span>👤</span>
+
+            <div>
+              <h3>Add Employee</h3>
+              <p>Register a new employee</p>
+            </div>
+          </a>
+
+          <a href="/attendance-page" class="action-card">
+            <span>📷</span>
+
+            <div>
+              <h3>Face Registration</h3>
+              <p>Register employee face</p>
+            </div>
+          </a>
+
+          <a href="/analytics-page" class="action-card">
+            <span>📋</span>
+
+            <div>
+              <h3>Attendance</h3>
+              <p>View today's attendance</p>
+            </div>
+          </a>
+
+          <a href="/analytics-page" class="action-card">
+            <span>📈</span>
+
+            <div>
+              <h3>Reports</h3>
+              <p>Analyze attendance data</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Recent Attendance -->
+      <section class="dashboard-section">
+        <div class="section-title">
+          <h2>Recent Attendance</h2>
+
+          <a href="/attendance-page">View All</a>
+        </div>
+
+        <div class="attendance-table">
+          <div class="table-header">
+            <span>Employee</span>
+            <span>Date</span>
+            <span>Check In</span>
+            <span>Status</span>
+          </div>
+
+          <div id="recentAttendance">
+            <span>📋</span>
+
+            <h3>Loading attendance...</h3>
+
+            <p>Attendance records will appear here once employees check in.</p>
+          </div>
+        </div>
+      </section>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      <script>
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+          window.location.href = "/login";
+        }
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Attendance - FaceAttend AI</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <h1>Attendance Records</h1>
+
+    <!-- Face Recognition Attendance -->
+
+    <div id="faceAttendanceSection">
+      <h2>Mark Attendance</h2>
+
+      <video id="attendanceCamera" width="400" height="300" autoplay></video>
+
+      <br /><br />
+
+      <button type="button" id="startAttendanceCamera">📷 Start Camera</button>
+
+      <button type="button" id="stopAttendanceCamera">🛑 Stop Camera</button>
+
+      <button type="button" id="markAttendanceButton">✅ Mark Attendance</button>
+
+      <p id="attendanceMessage"></p>
+      
+    </div>
+
+    <br />
+
+    <div>
+      <input
+        type="text"
+        id="searchAttendance"
+        placeholder="Search employee..."
+      />
+      <input type="date" id="dateFilter" />
+    </div>
+
+    <!-- <br />
+    <a href="/attendance/export/csv"><button type="button">📥 Export CSV</button>
+    </a> -->
+    <a href="/attendance/export/csv"id="exportCsvButton">📥 Export CSV</a>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Employee Code</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Check In</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody id="attendanceTable">
+        <!-- Attendance data will come here -->
+      </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
