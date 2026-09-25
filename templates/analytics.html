@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Reports & Analytics | FaceAttend AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    />
+</head>
+
+<body>
+
+    <!-- Reports Navbar -->
+
+    <header class="reports-navbar">
+
+        <div class="logo">
+            FaceAttend <span>AI</span>
+        </div>
+
+        <div class="reports-nav-actions">
+
+            <a href="/dashboard">
+                ← Dashboard
+            </a>
+
+            <a href="/attendance-page">
+                Attendance
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Reports Main -->
+
+    <main class="reports-page">
+
+        <!-- Page Header -->
+
+        <section class="reports-header">
+
+            <div>
+
+                <p class="reports-label">
+                    ATTENDANCE REPORTS
+                </p>
+
+                <h1>
+                    Reports & Analytics 📊
+                </h1>
+
+                <p>
+                    Analyze employee attendance and track
+                    performance over time.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Average Attendance -->
+
+        <section class="reports-summary">
+
+            <div class="report-summary-card">
+
+                <div class="report-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <p>
+                        Average Attendance
+                    </p>
+
+                    <h2 id="averageAttendance">
+                        0%
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Employee Analytics -->
+
+        <section class="report-section">
+
+            <div class="report-section-header">
+
+                <div>
+
+                    <p class="report-section-label">
+                        EMPLOYEE PERFORMANCE
+                    </p>
+
+                    <h2>
+                        Employee Analytics
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-table-wrapper">
+
+                <table class="report-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Employee Code
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Total Days
+                            </th>
+
+                            <th>
+                                Present Days
+                            </th>
+
+                            <th>
+                                Attendance %
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="analyticsTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Attendance Chart -->
+
+        <section class="report-section">
+
+            <div class="report-section-header">
+
+                <div>
+
+                    <p class="report-section-label">
+                        PERFORMANCE OVERVIEW
+                    </p>
+
+                    <h2>
+                        Attendance Percentage
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+
+                <canvas id="attendanceChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- Monthly Analytics -->
+
+        <section class="report-section">
+
+            <div class="report-section-header">
+
+                <div>
+
+                    <p class="report-section-label">
+                        MONTHLY REPORT
+                    </p>
+
+                    <h2>
+                        Monthly Attendance Analytics
+                    </h2>
+
+                </div>
+
+
+                <div class="month-filter">
+
+                    <label for="monthFilter">
+                        Select Month
+                    </label>
+
+                    <input
+                        type="month"
+                        id="monthFilter"
+                    />
+
+                </div>
+
+            </div>
+
+
+            <div class="report-table-wrapper">
+
+                <table class="report-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Employee Code
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Month
+                            </th>
+
+                            <th>
+                                Total Days
+                            </th>
+
+                            <th>
+                                Present Days
+                            </th>
+
+                            <th>
+                                Attendance %
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="monthlyAnalyticsTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Monthly Chart -->
+
+        <section class="report-section">
+
+            <div class="report-section-header">
+
+                <div>
+
+                    <p class="report-section-label">
+                        MONTHLY PERFORMANCE
+                    </p>
+
+                    <h2>
+                        Monthly Attendance Chart
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-container">
+
+                <canvas id="monthlyAttendanceChart"></canvas>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+</body>
+
+</html>

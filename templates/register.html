@@ -1,0 +1,310 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create Account | FaceAttend AI</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="login-page">
+      <div class="login-card">
+        <div class="login-logo">FaceAttend <span>AI</span></div>
+
+        <h1>Create Account</h1>
+
+        <p class="login-subtitle">
+          Create your admin account
+        </p>
+
+        <form id="registerForm">
+
+          <div class="form-group">
+            <label for="username">Username</label>
+
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter username"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Create password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="login-button">
+            Create Account
+          </button>
+
+        </form>
+
+        <p id="registerMessage"></p>
+
+        <p class="register-text">
+          Already have an account?
+          <a href="/login">Login</a>
+        </p>
+
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html> -->
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Account | FaceAttend AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="login-page">
+
+
+        <!-- =========================
+             LEFT BRAND SECTION
+        ========================== -->
+
+        <div class="login-brand">
+
+            <div class="login-brand-content">
+
+
+                <div class="login-logo">
+                    FaceAttend <span>AI</span>
+                </div>
+
+
+                <h2>
+                    Start Your
+                    <br>
+                    Smart Attendance Journey.
+                </h2>
+
+
+                <p>
+                    Create your admin account and
+                    manage employees, face recognition,
+                    attendance and analytics from one
+                    intelligent platform.
+                </p>
+
+
+                <div class="login-features">
+
+
+                    <div>
+                        <span>✓</span>
+                        AI Face Recognition
+                    </div>
+
+
+                    <div>
+                        <span>✓</span>
+                        Smart Attendance Tracking
+                    </div>
+
+
+                    <div>
+                        <span>✓</span>
+                        Powerful Analytics Dashboard
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             RIGHT REGISTER SECTION
+        ========================== -->
+
+        <div class="login-form-section">
+
+
+            <div class="login-card">
+
+
+                <div class="login-icon">
+                    👤
+                </div>
+
+
+                <h1>
+                    Create Account
+                </h1>
+
+
+                <p class="login-subtitle">
+                    Create your FaceAttend AI admin account
+                </p>
+
+
+
+                <form id="registerForm">
+
+
+                    <!-- Username -->
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Enter username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Button -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Create Account
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- Message -->
+
+                <p id="registerMessage"></p>
+
+
+
+                <!-- Login -->
+
+                <p class="register-text">
+
+                    Already have an account?
+
+                    <a href="/login">
+                        Login
+                    </a>
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>
