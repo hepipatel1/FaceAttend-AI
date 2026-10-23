@@ -1,7 +1,8 @@
-from flask import Flask, jsonify, request, render_template
+﻿from flask import Flask, jsonify, request, render_template
 from werkzeug.security import generate_password_hash, check_password_hash
 from database.db import get_db_connection
-from config import JWT_SECRET_KEY
+import os 
+JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'change-this-to-a-long-random-secret')
 import jwt
 from datetime import datetime, timedelta
 import pandas as pd
@@ -744,7 +745,7 @@ def monthly_attendance():
         how="left"
     )
 
-    # Missing present values → 0
+    # Missing present values â†’ 0
     monthly["present_days"] = (
         monthly["present_days"]
         .fillna(0)
