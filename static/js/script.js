@@ -997,8 +997,8 @@ if (loginForm) {
                 } else {
 
                     message.textContent =
-                        data.message;
                         data.error ||
+                        data.message ||
                         "Login failed.";
 
                 }

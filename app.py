@@ -148,6 +148,7 @@ def login():
     connection.close()
 
     if not user:
+        print("LOGIN USER FOUND:", bool(user))
         return jsonify({"error": "Invalid email or password"}), 401
     if not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid email or password"}), 401
