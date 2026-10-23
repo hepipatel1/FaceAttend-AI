@@ -1,5 +1,0 @@
-DB_HOST = "localhost"
-DB_USER = "root"
-DB_PASSWORD = "mysql123"
-DB_NAME = "faceattend_ai"
-JWT_SECRET_KEY = "change-this-to-a-long-random-secret"
